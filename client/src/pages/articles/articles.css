@@ -1,0 +1,321 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 10px;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;      
+}
+
+.board_wrap{
+    width: 1000px;
+    margin: 100px auto;
+}
+
+.board_title{
+    margin-bottom: 30px;
+}
+
+.board_title strong{
+    color:rgb(77, 1, 77);
+}
+
+.board_title .button_wrap{
+    float: right;
+}
+
+.board_title strong{
+    font-size: 3rem;
+}
+
+.board_title p{
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+.button_wrap{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.button_wrap a{
+    display: inline-block;
+    min-width: 80px;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid rgb(77, 1, 77);
+    border-radius: 2px;
+    font-size: 1.4rem;
+}
+
+.button_wrap a :first-child{
+    margin-left: 0;
+}
+
+.button_wrap a.on{
+    background-color:rgb(77, 1, 77);
+    color: white;
+}
+
+.board_list{
+    width: 100%;
+    border-top: 2px solid rgb(77, 1, 77);
+}
+
+.board_list>div {
+    border-bottom: 1px solid rgb(77, 1, 77);
+    font-size: 0;
+}
+
+.board_list>div.top {
+    border-color: rgb(77, 1, 77);
+}
+
+.board_list>div:last-child{
+    border-bottom: 1px solid rgb(77, 1, 77);
+}
+
+.board_list>div.top>div {
+    font-weight: 600;
+}
+
+
+.board_list>div>div{
+    display: inline-block;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.4rem;
+}
+
+.board_list .num{
+    width: 10%;
+}
+
+.board_list .top.title{
+    text-align: center;
+}
+.board_list .title{
+    width: 60%;
+    text-align: left;
+}
+
+.board_list .writer{
+    width: 10%;
+}
+
+.board_list .date{
+    width: 10%;
+}
+
+.board_list .count{
+    width: 10%;
+}
+
+.board_page{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+
+.board_page a{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgb(77, 1, 77);
+    border-left: 0;
+    line-height: 100%;
+    box-sizing: border-box;
+}
+
+.board_page a:first-child{
+    border-left: 1px solid rgb(77, 1, 77);
+}
+
+
+.board_page a.button{
+    padding-top: 10px;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+}
+
+.board_page a.num{
+    padding-top: 10px;
+    font-size: 1.4rem;
+}
+
+.board_page a.num.on{
+    border-color: rgb(77, 1, 77);
+    background-color: rgb(77, 1, 77);
+    color: white;
+}
+
+.search_field{
+    height: 100px;
+    text-align: center;
+    font-size: 5px;
+    padding-top: 10px;
+}
+
+.search_field input{
+    box-sizing: border-box;
+    width: 300px;
+    height: 30px;
+    border: 1px solid rgb(77, 1, 77);
+}
+
+.search_field button{
+    margin-left: 5px;
+    width: 50px;
+    height: 40px;
+    background-color:rgb(77, 1, 77);
+    color: white;
+    font-size: 15px;
+}
+
+.board_view{
+    width: 100%;
+    border-top: 2px solid rgb(77, 1, 77);
+}
+
+.board_view .title{
+    padding: 20px 15px;
+    border-bottom: 1px dashed rgb(243, 149, 243);
+    font-size: 2rem;
+}
+
+.board_view .info{
+    padding: 15px;
+    border-bottom: 1px solid rgb(77, 1, 77);
+    font-size: 0;
+
+}
+
+.board_view .info dl:first-child{
+    display: inline-block;
+    padding-left: 0;
+
+}
+
+.board_view .info dl{
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.board_view .info dl::before{
+    content: "";
+    display: block;
+    top : 3px;
+    left: 0;
+    position: absolute;
+    width: 1px;
+    height: 13px;
+    background-color: #999;
+}
+
+.board_view .info dl:first-child::before{
+    display: none;
+}
+
+
+.board_view .info dl dt,
+.board_view .info dl dd{
+    display: inline-block;  
+    font-size: 1.4rem;
+
+}
+
+.board_view .info dl dt{
+
+}
+
+.board_view .info dl dd{
+    margin-left: 10px;
+    color: #999;
+}
+
+.board_view .content{
+    padding: 15px;
+    border-bottom: 1px solid rgb(77, 1, 77);
+    line-height: 160%;
+    font-size: 1.4rem;
+}
+
+
+.board_write {
+    border-top: 2px solid rgb(77, 1, 77);
+}
+
+.board_write .title,
+.board_write .info {
+    padding: 15px;
+}
+
+.board_write .info {
+    border-top: 1px dashed rgb(243, 149, 243);
+    border-bottom: 1px solid rgb(77, 1, 77);
+    font-size: 0;
+}
+
+.board_write .title dl {
+    font-size: 0;
+}
+
+.board_write .info dl {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.board_write .title dt,
+.board_write .title dd,
+.board_write .info dt,
+.board_write .info dd {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.4rem;
+}
+
+.board_write .title dt,
+.board_write .info dt {
+    width: 100px;
+}
+
+.board_write .title dd {
+    width: calc(100% - 100px);
+}
+
+.board_write .title input[type="text"],
+.board_write .info input[type="text"],
+.board_write .info input[type="password"] {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.board_write .title input[type="text"] {
+    width: 80%;
+}
+
+.board_write .cont {
+    border-bottom: 1px solid rgb(77, 1, 77);;
+}
+
+.board_write .cont textarea {
+    display: block;
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 0;
+    resize: vertical;
+}
