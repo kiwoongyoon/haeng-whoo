@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt"; 
 import jwt from "jsonwebtoken"; 
-import User from "../models/User"; 
+import User from "../models/User.js"; 
 
 //등록기능 (인증, 인가)
 export const register = async(req,res)=>{
