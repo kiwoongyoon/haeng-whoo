@@ -38,6 +38,19 @@ a{
     font-size: 3rem;
 }
 
+.board_title .options{
+    text-align: right;
+}
+
+.board_title .options div{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.board_title .options div>select{
+   height: 25px
+}
+
 .board_title p{
     margin-top: 5px;
     font-size: 1.4rem;
@@ -235,10 +248,6 @@ a{
 
 }
 
-.board_view .info dl dt{
-
-}
-
 .board_view .info dl dd{
     margin-left: 10px;
     color: #999;
@@ -273,7 +282,13 @@ a{
 
 .board_write .info dl {
     display: inline-block;
-    width: 50%;
+    width: 25%;
+    vertical-align: middle;
+}
+
+.board_write .info dl:first-child {
+    display: inline-block;
+    width: 40%;
     vertical-align: middle;
 }
 
