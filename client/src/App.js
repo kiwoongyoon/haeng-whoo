@@ -1,22 +1,16 @@
-import './App.css';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import Articles from './pages/articles/articles';
-import Article from './pages/article/article';
-import Main from './pages/main/main';
+// import './App.css';
+import {Navigate, BrowserRouter, Route, Routes} from 'react-router-dom';
+import HomePage from 'scenes/homePage';
+import LoginPage from 'scenes/loginPage';
+import ProfilePage from 'scenes/profilePage';
+import { useMemo } from "react";
+import { useSelector } from "react-redux";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { themeSettings } from "./theme";
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Main/>}/>
-          <Route path='/articles' element={<Articles/>}/>
-          <Route path='/articles/:id' element={<Article/>}/>
-          {/* <Route path='/write' element={<Write/>}/>
-          <Route path='/edit' element={<Edit/>}/> */}
-          {/* <Route path='/login' element={<Login/>}/> */}
-      </Routes>
-    </BrowserRouter>
-    </div>
+  return ( 
+    <div></div>
   );
 }
 
