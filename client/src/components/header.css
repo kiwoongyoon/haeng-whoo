@@ -1,0 +1,29 @@
+header{
+  display: flex;
+  flex-direction: row;
+  background-color: lightpink;
+  width: 100%;
+  align-items: center;
+}
+
+.logo_name{
+  align-self: flex-start;
+  float: left;
+  font-size: 40px;
+  margin-block: 0px;
+  padding: 20px;
+}
+
+.logo_menubox{
+  margin-left: auto;
+
+}
+
+.logo_menubox_item{
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background-size: 40px 40px;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
