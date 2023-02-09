@@ -2,38 +2,40 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import "./select.css"
 import board_content from '../../../data/board_content.json';
+import tag_list from '../../../data/tag_list.json';
 
 const Query=()=>{
-    const [inputs, setInputs] = useState({
-        "city":"city",
-        "season":"season",
-        "star":"star",
-        "price":"price"
+    const [query, setInputs] = useState({
+        "city":"1",
+        "season":"1",
+        "star":"1",
+        "price":"1",
+        "tag": []
     });
 
+    const [color, setColor] = useState({})
+
     return(
-        <div className='query'>
-            <div className='board'>
-                <h1>후기</h1>
-                <div className='inner_board'>{board([inputs, setInputs])}</div>
+        <div className="row p-3 m-3" style={{height: "400px", backgroundColor: "yellow"}}>
+            <div className='col h-100  me-3' style={{backgroundColor: "red"}}>
+                <div className='h-100 overflow-auto mb-3'>
+                    {board(query)}
+                </div>
             </div>
-            <div className='board'>
-                <h1>매칭</h1>
-                <div className='inner_board'>{matching([inputs, setInputs])}</div>
-            </div>
-            <div className='search'>{search([inputs, setInputs])}</div>
+            <div className='col-3 h-100'>{search([query, setInputs])}</div>
+            <div className='col-3 h-100'>{tag([color, setColor], [query, setInputs])}</div>
         </div>
     )
 }
 
-const search=([inputs, setInputs])=>{
+const search=([query, setInputs])=>{
     return(
         ["city","season","star","price"].map((input)=>(
-            <div>
+            <div className='h-25'>
                 <div className='inner_search'>   
                     <h1>{input}</h1> 
                     <input placeholder='1' onChange={(e)=>(
-                        setInputs({...inputs, [input]: e.target.value})
+                        setInputs({...query, [input]: e.target.value})
                     )}/>
                 </div>  
             </div>
@@ -41,28 +43,47 @@ const search=([inputs, setInputs])=>{
     )
 }
 
-const board=([inputs, setInputs])=>{
+const tag=([color, setColor], [query, setInputs])=>{
     return(
-        board_content.filter(search_engine(inputs)).map((input)=>(
-            <div className='inner_content'>
+        <div>
+            {
+                tag_list.map((input)=>(
+                    color[input] = 'pink',
+                    <button className='m-3' style={{backgroundColor: color[input]}} onClick={(e) => {
+                        if(e.target.backgroundColor = "pink"){
+                            setColor({...color, [input]: "yellow"})
+                            console.log(e.target.backgroundColor);
+                            query.tag.concat(input)
+                        }
+                        else {
+                            setColor({...color, [input]: "pink"})
+                            console.log(e.target.backgroundColor);
+                            setInputs({...query, "tag": [...query.tag.filter(tag => input!=tag) ]})
+                        };
+                    }}>   
+                    <h1 className='w-auto h-auto'>{input}</h1> 
+                </button>))
+            }
+        </div>
+    )
+}
+
+const board=(query)=>{
+    return(
+        board_content.filter(search_engine(query)).map((input)=>(
+            <div className='inner_content text-center'>
                 {console.log(input.number)}
-                <Link to={"/articles/"+input.number}>   
-                    <h1>{input.city}</h1> 
-                    <h1>{input.content}</h1> 
+                <Link to={"/articles/"+input.metadata.number}>   
+                    <h1>{input.metadata.city}</h1> 
+                    <h1>{input.metadata.content}</h1> 
                 </Link>  
             </div>
         ))
     )
 }
 
-const search_engine = (inputs)=>(input=>
-    input.city==inputs["city"]&&
-    input.season==inputs["season"]&&
-    input.star==inputs["star"]&&
-    input.price==inputs["price"]
+const search_engine = (query)=>(input=>
+    input.metadata.city==query.city
 );
-
-const matching=([inputs, setInputs])=>{
-}
 
 export default Query
