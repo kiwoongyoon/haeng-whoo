@@ -5,25 +5,38 @@ import board_content from '../../../data/board_content.json';
 import tag_list from '../../../data/tag_list.json';
 
 const Query=()=>{
-    const [query, setInputs] = useState({
-        "city":"1",
-        "season":"1",
-        "star":"1",
-        "price":"1",
-        "tag": []
-    });
-
-    const [color, setColor] = useState({})
-
     return(
-        <div className="row p-3 m-3" style={{height: "400px", backgroundColor: "yellow"}}>
-            <div className='col h-100  me-3' style={{backgroundColor: "red"}}>
-                <div className='h-100 overflow-auto mb-3'>
-                    {board(query)}
-                </div>
-            </div>
-            <div className='col-3 h-100'>{search([query, setInputs])}</div>
-            <div className='col-3 h-100'>{tag([color, setColor], [query, setInputs])}</div>
+        <div className="row">
+            {["후기", "매칭"].map((category) => {
+                return(
+                    <div className="p-3 bg-light w-50">
+                        <div class="d-flex mb-3 bg-info">
+                            <div class="me-auto p-2"><h1>{category}게시판!</h1></div>
+                            <div class="p-2 h-100"><Link to='articles'>more!</Link></div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {board_content.slice(0,10).map(content=>
+                                <tr onClick={() => {window.location.href="articles/"+content["number"]}}>
+                                    <th scope="row">{content["number"]}</th>
+                                    <td>{content["author"]}</td>
+                                    <td>{content["title"]}</td>
+                                    <td>{content["date"]}</td>
+                                </tr>
+                            )}
+                            </tbody>
+                        </table>
+                    </div>
+                )
+            })}
         </div>
     )
 }
@@ -67,23 +80,5 @@ const tag=([color, setColor], [query, setInputs])=>{
         </div>
     )
 }
-
-const board=(query)=>{
-    return(
-        board_content.filter(search_engine(query)).map((input)=>(
-            <div className='inner_content text-center'>
-                {console.log(input.number)}
-                <Link to={"/articles/"+input.metadata.number}>   
-                    <h1>{input.metadata.city}</h1> 
-                    <h1>{input.metadata.content}</h1> 
-                </Link>  
-            </div>
-        ))
-    )
-}
-
-const search_engine = (query)=>(input=>
-    input.metadata.city==query.city
-);
 
 export default Query
