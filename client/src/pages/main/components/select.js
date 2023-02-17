@@ -10,22 +10,23 @@ const Query=()=>{
             {["후기", "매칭"].map((category) => {
                 return(
                     <div className="p-3 bg-light w-50">
-                        <div class="d-flex mb-3 bg-info">
+                        <div class="d-flex mb-3 bg-info align-items-center">
                             <div class="me-auto p-2"><h1>{category}게시판!</h1></div>
                             <div class="p-2 h-100"><Link to='articles'>more!</Link></div>
                         </div>
                         <table class="table">
                             <thead>
                                 <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">number</th>
+                                <th scope="col">author</th>
+                                <th scope="col">title</th>
+                                <th scope="col">date</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {board_content.slice(0,10).map(content=>
-                                <tr onClick={() => {window.location.href="articles/"+content["number"]}}>
+                                <tr onClick={() => {window.location.href="articles/"+content["number"]}}
+                                    style = {{cursor:"pointer"}}>
                                     <th scope="row">{content["number"]}</th>
                                     <td>{content["author"]}</td>
                                     <td>{content["title"]}</td>
