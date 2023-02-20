@@ -206,7 +206,7 @@ const Form = () => {
                         >
                           <input {...getInputProps()} />
                           {!values.picture ? (
-                            <p>Add Picture Here</p>
+                            <p>사진 넣기</p>
                           ) : (
                             <FlexBetween>
                               <Typography>{values.picture.name}</Typography>
