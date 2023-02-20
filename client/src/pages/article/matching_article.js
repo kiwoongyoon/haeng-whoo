@@ -23,14 +23,14 @@ const data = {
 };
 
 
-const Article = ()=>{
+const MatchingArticle = ()=>{
     const params = useParams();//url파라미터를 useParams Hook으로 조회한다.
     const read =data[params.id]; 
     return(
         <div className = "board_wrap">
         <div className="board_title">
-            <strong>여행 후기</strong>
-            <p>행후에서 당신의 여행 이야기를 작성해보세요!</p>
+            <strong>여행메이트 매칭</strong>
+            <p>행후에서 당신의 여행 메이트를 찾아보세요!</p>
         </div>
         <div className="board_view_wrap">
             <div className="board_view">
@@ -78,4 +78,4 @@ const Article = ()=>{
     
 };
 
-export default Article;
+export default MatchingArticle;

@@ -7,7 +7,7 @@ import board_content from "../../data/board_content.json";
 import './articles.css';
 
 
-const Articles = ()=>{  
+const MatchingArticles = ()=>{  
     return(
         <div className = "board_wrap">
         <div className="board_title">
@@ -32,8 +32,8 @@ const Articles = ()=>{
                 <a href="/write" className="on">작성하기</a>
                 <a href="/" className="on">집으로</a>
             </div>
-            <strong>여행 후기</strong>
-            <p>행후에서 당신의 여행 후기를 작성해보세요!</p>
+            <strong>여행메이트 매칭</strong>
+            <p>행후에서 당신의 여행 메이트를 찾아보세요!</p>
         </div>
         <div className="board_list_wrap">
             <div className="board_list">
@@ -89,4 +89,4 @@ const Articles = ()=>{
 
 }
 
-export default Articles;
+export default MatchingArticles;

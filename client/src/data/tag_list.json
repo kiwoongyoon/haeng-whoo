@@ -1,0 +1,6 @@
+[
+    {"id": 1, "en": "vacation", "ko":"휴양지"}, 
+    {"id": 2, "en": "historic", "ko":"유적지"}, 
+    {"id": 3, "en": "hotel", "ko":"호텔 투어"}, 
+    {"id": 4, "en": "train", "ko":"기차 투어"}
+]
