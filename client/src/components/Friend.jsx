@@ -19,15 +19,15 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const primaryDark = palette.primary.dark;
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
-
-  const isFriend = friends.find((friend) => friend._id === friendId);
+  // console.log(friends); 
+  const isFriend = friends.find((friende) => friende._id === friendId);
   //이미 친구인 경우는 친구 삭제 버튼이 나타나게 만들어야 해서 
 
   const patchFriend = async () => {
     //백엔드에 요청을 보내고 받은 응답으로 redux에 전달한다 
     //백엔드에서 controllers/users에 router.patch로 구현 되어있다(친구 삭제와 추가)
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `http://localhost:4000/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
